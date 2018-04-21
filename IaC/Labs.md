@@ -26,7 +26,7 @@ Here are some [online instructions](https://docs.microsoft.com/en-us/azure/azure
 
 ## 3. Deploying other types of resources
 
-There is a huge list of sample Azure deployments in the [Github ARM quickstart samples repo](https://github.com/Azure/azure-quickstart-templates).  Some of the samples are prefixed with 101, or 201, or 301 to indicate of expertise.  But you can often take one of the samples and have something deployed pretty quickly, depending on complexity.
+There is a huge list of sample Azure deployments in the [Github ARM quickstart samples repo](https://github.com/Azure/azure-quickstart-templates).  Some of the samples are prefixed with 101, or 201, or 301 to indicate level of expertise.  But you can often take one of the samples and have something deployed pretty quickly, depending on complexity.
 
 ## 4. Useful references
 
