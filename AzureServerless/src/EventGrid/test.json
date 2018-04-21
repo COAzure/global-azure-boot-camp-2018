@@ -1,0 +1,15 @@
+{
+    "id": "e904e825-ad82-4c5a-b3fc-0ecc8a18c937",
+    "_rid": "Zud8AMsSbQAZAAAAAAAAAA==",
+    "_self": "dbs/Zud8AA==/colls/Zud8AMsSbQA=/docs/Zud8AMsSbQAZAAAAAAAAAA==/",
+    "_ts": 1520974124,
+    "_etag": "\"00009f0e-0000-0000-0000-5aa8392c0000\"",
+    "name": "Model T",
+    "company": "Ford",
+    "description": "Ford",
+    "image_url": "https://ascendstor.blob.core.windows.net/out/420px-1919_Ford_Model_T_Highboy_Coupe.jpg",
+    "state": "pending",
+    "textApproval": "complete",
+    "imageApproval": "pending",
+    "_lsn": 76
+}
