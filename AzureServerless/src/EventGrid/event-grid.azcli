@@ -1,0 +1,27 @@
+
+az login
+az account set --subscription 0bbbc191-0023-40aa-b490-5536b2182f46
+az group create --name gab2018-eventgrid --location centralus
+
+
+
+# Create an Event Grid topic.
+az eventgrid topic create --name gab18 -l centralus -g gab2018-eventgrid 
+
+# Create an endpoint
+az eventgrid topic show --name gab18 -g gab2018-eventgrid  --query "endpoint" --output tsv
+az eventgrid topic key list --name gab18 -g gab2018-eventgrid --query "key1" --output tsv
+
+
+# Subscribe to events
+az eventgrid event-subscription create -g gab2018-eventgrid --topic-name gab18 --name customers --endpoint https://gab18-events.azurewebsites.net/api/MyHttpTrigger?code=Irp/HuPa73aGqElHFqeOaZceyANyBG8NSxaSHVYcfADhtpAmvZiH1Q== --included-event-types "All"
+
+# filters
+# az eventgrid event-subscription create -g gab2018-eventgrid --topic-name gab18 --name contoso-customer-created --endpoint https://requestb.in/18gv73c1 --included-event-types "CustomerCreated" --subject-ends-with "Contoso" --subject-case-sensitive "false"
+
+
+
+# Azure blob storage
+# az storage account show --name gab18events --resource-group gab2018-eventgrid  --query id --output tsv
+
+# az eventgrid event-subscription create --resource-id /subscriptions/*******************/resourceGroups/gab2018-eventgrid/providers/Microsoft.Storage/storageAccounts/gab18events --name myimageevents --endpoint https://requestb.in/tz40rntz

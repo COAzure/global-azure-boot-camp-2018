@@ -1,0 +1,21 @@
+
+# Create an Event Grid topic.
+az eventgrid topic create --name ascend -l centralus -g mcollier-ascend
+
+# TODO: Creat an endpoint
+
+az eventgrid topic show --name ascend -g mcollier-ascend --query "endpoint" --output tsv
+
+az eventgrid topic key list --name ascend -g mcollier-ascend --query "key1" --output tsv
+
+
+# Subscribe to events
+az eventgrid event-subscription create -g mcollier-ascend --topic-name ascend --name mysubscriptions --endpoint https://requestb.in/woumsvwo --included-event-types "All"
+
+# filters
+az eventgrid event-subscription create -g mcollier-ascend --topic-name ascend --name contoso-customer-created --endpoint https://requestb.in/z0twdhz0 --included-event-types "CustomerCreated" --subject-ends-with "Contoso" --subject-case-sensitive "false"
+
+# Azure blob storage
+az storage account show --name mcollierascend --resource-group mcollier-ascend --query id --output tsv
+
+az eventgrid event-subscription create --resource-id /subscriptions/SUBSCRIPTION-ID/resourceGroups/mcollier-ascend/providers/Microsoft.Storage/storageAccounts/mcollierascend --name myimageevents --endpoint https://hookbin.com/bin/vgLLPYdY
